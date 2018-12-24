@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Steam Desktop Client
+Comment=Start Steam Client as Steam User
+Exec=/usr/bin/start-steam-client.sh
+Icon=steam
+Terminal=false
+Type=Application
+Categories=Network;FileTransfer;Game;
+MimeType=x-scheme-handler/steam;
