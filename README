@@ -7,10 +7,10 @@ way.
 
 1.  Overview
 
-ConvergenceOS is a post-installer to turn a vanilla Ubuntu or Linux Mint into a 
-SteamOS(R)-like PC-based video game console, with the option to install
-secondary home-server functionality in the same manner you would do with either
-Ubuntu or Linux Mint.
+ConvergenceOS is a post-installer to turn a vanilla Ubuntu or Linux Mint 
+installation into a SteamOS(R)-like PC-based video game console, with the option
+to install secondary home-server functionality in the same manner you would do 
+with either Ubuntu or Linux Mint.
 
 Advantages of using ConvergenceOS include:
 
@@ -30,7 +30,7 @@ repository.  Therefore an internet connection is absolutely necessary.
 When installing ConvergenceOS, please first install a fresh "vanilla" 
 Ubuntu 18.04 or Linux Mint/Cinnamon 19 64 bit distribution on your machine.  
 Installing this on top of systems that you have already been running hasn't been
-tested, and is discouraged for that reason.
+tested, and is discouraged.
 
 After installing a supported Linux distro, clone the ConvergenceOS repository
 into your home directory.  Enter the ConvergenceOS folder and type:
@@ -40,16 +40,16 @@ into your home directory.  Enter the ConvergenceOS folder and type:
 as the unpriviliged desktop user.  Do not start the program with administrator
 privileges - you will be asked for your administrator password later.
 
-The program will configure your system to boot directly the Steam(R) Big Picture
-interface, as well as create some desktop icons that will allow you to manage
-your Steam(R) session.
+The program will configure your system to boot directly into the Steam(R) Big 
+Picture interface, as well as create some desktop icons that will allow you to 
+manage your Steam(R) session.
 
 After installing Steam(R), the program will check your drivers, and install
 additional components as needed.
 
 3.  Using the System
 
-After installation, the system should boot into the Steam (R) Big Picture 
+After installation, the system should boot into the Steam(R) Big Picture 
 interface.
 
 From there, you can enable the Linux desktop in the settings to access your
@@ -80,12 +80,21 @@ Steam(R) sessions:
 
         > and so on and so forth
 
+   Note that your SteamOS(R) session will be restarted automatically when you
+   click the Return to SteamOS(R) icon.  Terminating the SteamOS(R) session is
+   necessary since only one instance of the Steam(R) client can only be running
+   at a time for a given user.
+   
+
 4.  Future Goals
 
-Eventually have a controller-friendly video game console-like greeter program 
-that will allow the user to laucher game stores other than Steam.  Also move the
-desktop administrator launcher to the greeter to perform home server and other
-administrative tasks.
+ - Have a controller-friendly video game console-like greeter that will allow 
+   the user to laucher game stores other than Steam.  Also move the desktop 
+   administrator launcher to the greeter to perform home server and other 
+   administrative tasks for all installed stores/game managers.
+
+ - Offer a ConvergenceOS ISO, with post-installation features integrated into 
+   the normal distro installation program.
 
 
 
