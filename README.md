@@ -56,7 +56,7 @@ In the desktop interface you will have two icons to manage your desktop and Stea
 
 ## Future Goals
 
- * Have a controller-friendly video game console-like greeter that will allow the user to lauche game managers or stores other than Steam.  Also move the desktop administrator launcher to the greeter to perform home server and other   administrative tasks for all installed stores/game managers.
+ * Have a controller-friendly video game console-like greeter that will allow the user to launch game managers or stores other than Steam.  Also move the desktop administrator launcher to the greeter to perform home server and other   administrative tasks for all installed stores/game managers.
 
  * Offer a ConvergenceOS ISO, with post-installation features integrated into the normal distro installation program.
  
