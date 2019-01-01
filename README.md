@@ -2,8 +2,11 @@
 
 ## Disclaimer
 
-ConvergenceOS is not affiliated with Valve, Steam, Ubuntu, or Linux Mint in any
-way. 
+ConvergenceOS is not affiliated with Valve, Steam, Ubuntu, or Linux Mint in any way. 
+
+## Release
+
+You can find binary releases of this program on GitHub at https://github.com/jonbitzen/ConvergenceOS/releases
 
 ## Overview
 
