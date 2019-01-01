@@ -59,6 +59,8 @@ In the desktop interface you will have two icons to manage your desktop and Stea
  * Have a controller-friendly video game console-like greeter that will allow the user to lauche game managers or stores other than Steam.  Also move the desktop administrator launcher to the greeter to perform home server and other   administrative tasks for all installed stores/game managers.
 
  * Offer a ConvergenceOS ISO, with post-installation features integrated into the normal distro installation program.
+ 
+ * Create a node-based storage manager for games and media applications, which abstracts mount points (folders) as "pins" on nodes (storage devices); after setting pins on the nodes, the user should just connect source pins (folders on storage devices) to destination pins (mount points) to configure storage
 
 
 
