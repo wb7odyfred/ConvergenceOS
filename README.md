@@ -22,7 +22,7 @@ Please note that proprietary SteamOS components are NOT redistributed with this 
 
 ## Installing
 
-When installing ConvergenceOS, please first install a fresh "vanilla" Ubuntu 18.04 or Linux Mint/Cinnamon 19 64 bit distribution on your machine.  Installing this on top of systems that you have already been running hasn't been tested, and is discouraged.
+When installing ConvergenceOS, please first install a fresh "vanilla" Ubuntu 18.04 or Linux Mint/Cinnamon 19 64 bit distribution on your machine.  Installing this on top of systems that you have already been running, whose configuration and packages may differ from the initial default Ubuntu/Mint install hasn't been tested, and is not recommended.
 
 After installing a supported Linux distro, clone the ConvergenceOS repository into your home directory.  Enter the ConvergenceOS folder and type:
 
