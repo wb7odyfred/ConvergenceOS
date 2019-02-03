@@ -517,14 +517,14 @@ function check_dist {
     if [ "$LSB_RELEASE_ID" == "Debian" ]; then
 	    if (! [[ $LSB_RELEASE_NUMBER =~ 9.[0-9] ]]); then       
             echo "Unsupported Debian version ${LSB_RELEASE_NUMBER}"
-    echo "#  URL Links to read on setting up Steam for several varieties of Linux  \n
+	    echo "#  URL Links to read on setting up Steam for several varieties of Linux  \n
 # https://www.addictivetips.com/ubuntu-linux-tips/linux-steam-machine-without-steam-os/  \n "
   	    UNSUPPORTED_RELEASE=TRUE
         else
   	    UNSUPPORTED_RELEASE=FALSE
         fi
     elif [ "$LSB_RELEASE_ID" == "LinuxMint" ]; then
-	    if (! [[ $LSB_RELEASE_NUMBER =~ 19.[0-9] ]]); then       
+        if (! [[ $LSB_RELEASE_NUMBER =~ 19.[0-9] ]]); then       
             echo "Unsupported LinuxMint version ${LSB_RELEASE_NUMBER}"
 	    UNSUPPORTED_RELEASE=TRUE
     	else
@@ -541,13 +541,27 @@ function check_dist {
     else
         echo "Unsupported distribution $LSB_RELEASE_ID $LSB_RELEASE_NUMBER"
 	UNSUPPORTED_RELEASE=TRUE
-	echo "  Do this to use this distribution $LSB_RELEASE_ID " fi
-    	if [ "$LSB_RELEASE_ID" == "OpenSuSe" ]; then
-	    echo " Look in OpenSuSe repository  for Steam"
+	echo "  Do this to use this distribution $LSB_RELEASE_ID " 
+    	if [ "$LSB_RELEASE_ID" == "OpenSUSE" ]; then
+	    echo " Look in OpenSuSe software repository  for Steam"
+	   echo " OpenSUSE has the Steam client ready to install in the OBS. Head over to the official Steam page, /n select your release and click “1-Click Install” to get it working. "
+	    echo "https://software.opensuse.org/package/steam"
 	fi
-    	elif [ "$LSB_RELEASE_ID" == "Arch" ]; then
+	if [ "$LSB_RELEASE_ID" == "Arch" ]; then
 	    echo "  Use Aur to install Steam "
+	    echo " Steam is available on Arch Linux, but will not install unless the “Multilib” and “Community” repositories are enabled in /n /etc/pacman.conf. Turn them on, then do the following commands in a terminal to install it. /n /n
+	    sudo pacman -Syy steam /n "
 	fi
+	if [ "$LSB_RELEASE_ID" == "Fedora" ]; then
+	    echo " Fedora doesn’t have Steam, as it’s not open source. Luckily, it’s on RPM Fusion. /n
+	    Note: replace X with your Fedora version number (like 28.) /n /n
+	    sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-X.noarch.rpm /n
+	   /n 
+	    sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-X.noarch.rpm /n /n
+	    
+	    sudo dnf install steam -y /n"
+	fi
+    fi
 
 
 
@@ -590,5 +604,4 @@ else
     echo ${SUDO_PASSWORD} | sudo -S $0 "SKIP_INTRO" $DESKTOP_SESSION
 
 fi
-
 
