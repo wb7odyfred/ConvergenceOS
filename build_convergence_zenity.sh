@@ -17,18 +17,24 @@
 # along with ConvergenceOS.  If not, see <https://www.gnu.org/licenses/>.  
 
 OLD_DESKTOP_USER=desktop 
-NEW_DESKTOP_USER=$(logname) 
+#NEW_DESKTOP_USER=$(logname)   # does not work in LinuxMint 19.1  returns "No login" 
+#NEW_DESKTOP_USER=$LOGNAME # returns "root" when run by sudo command
+# https://askubuntu.com/questions/490620/difference-between-logname-and-logname
+# echo $USER > ~/.logname
+declare g_logname="$(<~/.logname)";
+NEW_DESKTOP_USER=$g_logname
+
 STEAM_USER=steam 
 LSB_RELEASE_ID=NONE 
 UNSUPPORTED_RELEASE=TRUE
 LIGHTDM_BIN="/usr/sbin/lightdm" 
 
 function check_for_zenity  { 
-	echo "Check for Zenity and install if not found" 
+	echo "Check for Zenity file and install if not found" /usr/bin 
 #	sleep 5 
 #        if [ "$LSB_RELEASE_ID" == "Debian" ]; then
 	    if [ ! -f /usr/bin/zenity ]; then
-		# echo the /usr/bin/zenity file does not exist, install zenity
+		# echo "the /usr/bin/zenity file does not exist, install zenity/n"
 		sudo apt-get update 
         	sudo apt-get -y install zenity
 	    fi
@@ -576,6 +582,7 @@ zenity --info --width 600 --text "This program will install ConvergenceOS on you
 check_for_zenity   #zenity is not installed in Plain Debian, We need to install zenity before first use in "Welcome to Convergence OS message"
 
 if [ "$1" != "SKIP_INTRO" ]; then
+    echo $USER > ~/.logname
 	welcome_to_convergence_os
 fi
 
