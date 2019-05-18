@@ -45,6 +45,12 @@ function create_steam_user {
 
 adduser --disabled-password --gecos "" ${STEAM_USER}
 
+# sudo addgroup --system nopasswdlogin
+# Creating the nopasswdlogin group if it isn't already there.
+# Needed for passwordless logins, working thanks to MDM's PAM policy.
+if ! getent group nopasswdlogin >/dev/null; then
+        addgroup --system nopasswdlogin
+fi
 usermod -a -G steam,nopasswdlogin ${STEAM_USER}
 
 }
@@ -57,6 +63,11 @@ function change_steamos_session_desktop_user {
     sed -i 's/'"${OLD_DESKTOP_USER}"'/'"${NEW_DESKTOP_USER}"'/g' /usr/bin/steamos-session
     sed -i 's/'"${OLD_DESKTOP_SESSION}"'/'"${NEW_DESKTOP_SESSION}"'/g' /usr/bin/steamos-session
 
+# Creating the nopasswdlogin group if it isn't already there.
+# Needed for passwordless logins, working thanks to MDM's PAM policy.
+if ! getent group nopasswdlogin >/dev/null; then
+        addgroup --system nopasswdlogin
+fi
     usermod -a -G nopasswdlogin ${NEW_DESKTOP_USER}
 
 }
