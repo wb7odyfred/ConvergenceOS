@@ -540,6 +540,14 @@ function check_dist {
         else
   	    UNSUPPORTED_RELEASE=FALSE
         fi
+	    if (! [[ $LSB_RELEASE_NUMBER =~ 10.[0-9] ]]); then       
+            echo "Unsupported Debian version ${LSB_RELEASE_NUMBER}"
+	    echo "#  URL Links to read on setting up Steam for several varieties of Linux  \n
+# https://www.addictivetips.com/ubuntu-linux-tips/linux-steam-machine-without-steam-os/  \n "
+  	    UNSUPPORTED_RELEASE=TRUE
+        else
+  	    UNSUPPORTED_RELEASE=FALSE
+        fi
     elif [ "$LSB_RELEASE_ID" == "LinuxMint" ]; then
         if (! [[ $LSB_RELEASE_NUMBER =~ 19.[0-9] ]]); then       
             echo "Unsupported LinuxMint version ${LSB_RELEASE_NUMBER}"
